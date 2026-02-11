@@ -1,0 +1,6 @@
+@Vikta.APi_HostAddress = http://localhost:5106
+
+GET {{Vikta.APi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
