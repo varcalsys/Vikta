@@ -8,7 +8,7 @@ using Vikta.Data.Academico;
 
 #nullable disable
 
-namespace Vikta.Data.Academico.MIgrations
+namespace Vikta.Data.Academico.Migrations
 {
     [DbContext(typeof(AcademicoDbContext))]
     partial class AcademicoDbContextModelSnapshot : ModelSnapshot
@@ -86,7 +86,7 @@ namespace Vikta.Data.Academico.MIgrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("TurmaId")
+                    b.Property<int>("TurmaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -270,7 +270,8 @@ namespace Vikta.Data.Academico.MIgrations
                     b.HasOne("Vikta.Domain.Academico.Entities.Turma", "Turma")
                         .WithMany("Alunos")
                         .HasForeignKey("TurmaId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Turma");
                 });
@@ -286,7 +287,7 @@ namespace Vikta.Data.Academico.MIgrations
                     b.HasOne("Vikta.Domain.Academico.Entities.Turma", "Turma")
                         .WithMany()
                         .HasForeignKey("TurmaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Aluno");

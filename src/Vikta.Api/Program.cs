@@ -19,6 +19,10 @@ builder.Services.AddDbContext<AcademicoDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IMatriculaRepository, MatriculaRepository>();
+builder.Services.AddScoped<ITurmaRepository, TurmaRepository>();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -26,10 +30,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
 
-app.MapAcademicoEndpoints();
+app.MapMatriculaEndpoints();
+app.MapTurmaEndpoints();
 
 app.Run();

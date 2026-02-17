@@ -17,7 +17,8 @@ public class MatriculaConfig : IEntityTypeConfiguration<Matricula>
 
         builder.HasOne(m => m.Turma)
             .WithMany()
-            .HasForeignKey(m=>m.TurmaId);
+            .HasForeignKey(m => m.TurmaId)
+            .OnDelete(DeleteBehavior.NoAction);
 
         builder.HasMany(m => m.Responsaveis)
             .WithMany(r => r.Matriculas)

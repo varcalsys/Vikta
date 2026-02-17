@@ -9,7 +9,7 @@ namespace Vikta.Api.Academico.Endpoints;
 
 public static class MatriculaEndpoints
 {
-    public static IEndpointRouteBuilder MapAcademicoEndpoints(this IEndpointRouteBuilder app)
+    public static IEndpointRouteBuilder MapMatriculaEndpoints(this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/academico").WithTags("Academico");
 

@@ -25,8 +25,7 @@ public class AlunoConfig : IEntityTypeConfiguration<Aluno>
 
         builder.HasOne(a => a.Turma)
             .WithMany(t => t.Alunos)
-            .HasForeignKey(a => a.TurmaId)
-            .OnDelete(DeleteBehavior.SetNull);
+            .HasForeignKey(a => a.TurmaId);
   
         builder.HasMany(a => a.Responsaveis)
             .WithMany(r => r.Alunos);

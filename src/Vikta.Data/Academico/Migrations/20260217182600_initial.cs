@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Vikta.Data.Academico.MIgrations
+namespace Vikta.Data.Academico.Migrations
 {
     /// <inheritdoc />
     public partial class initial : Migration
@@ -60,7 +60,7 @@ namespace Vikta.Data.Academico.MIgrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Cpf = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
-                    TurmaId = table.Column<int>(type: "int", nullable: true)
+                    TurmaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -70,7 +70,7 @@ namespace Vikta.Data.Academico.MIgrations
                         column: x => x.TurmaId,
                         principalTable: "Turma",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.SetNull);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -126,8 +126,7 @@ namespace Vikta.Data.Academico.MIgrations
                         name: "FK_Matricula_Turma_TurmaId",
                         column: x => x.TurmaId,
                         principalTable: "Turma",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(

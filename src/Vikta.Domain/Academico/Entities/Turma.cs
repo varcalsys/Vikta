@@ -1,13 +1,31 @@
-﻿
 namespace Vikta.Domain.Academico.Entities;
 
 public sealed class Turma
 {
-    public int Id { get; init; }
-    public required string Nome { get; init; }
-    public int Ano { get; init; }
-    public required ICollection<Professor> Professores { get; init; }
-    public required ICollection<Aluno> Alunos { get; init; }
+    public int Id { get; private set; }
+    public string Nome { get; private set; }
+    public int Ano { get; private set; }
+    public ICollection<Professor> Professores { get; private set; }
+    public ICollection<Aluno> Alunos { get; private set; }
 
-    private Turma() { }
+    private Turma()
+    {
+        Nome = string.Empty;
+        Professores = [];
+        Alunos = [];
+    }
+
+    public Turma(string nome, int ano)
+    {
+        Nome = nome;
+        Ano = ano;
+        Professores = [];
+        Alunos = [];
+    }
+
+    public void Atualizar(string nome, int ano)
+    {
+        Nome = nome;
+        Ano = ano;
+    }
 }

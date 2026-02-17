@@ -17,4 +17,6 @@
         string? Complemento,
         string Bairro,
         string Cep);
+
+    public record TurmaRequest(string Nome, int Ano);
 }

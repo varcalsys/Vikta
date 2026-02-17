@@ -13,6 +13,7 @@ internal class TurmaConfig : IEntityTypeConfiguration<Turma>
         builder.Property(t => t.Nome)
             .IsRequired()
             .HasMaxLength(50);
+
         builder.HasMany(t => t.Professores)
             .WithMany(p => p.Turmas)
             .UsingEntity(j => j.ToTable("TurmaProfessor")); 

@@ -43,7 +43,8 @@ public class MatricularAlunoHandler(IMatriculaRepository matriculaRepository) : 
             (
                 command.Matricula.Aluno.Nome,
                 new Cpf (command.Matricula.Aluno.Cpf ),
-                responsaveis
+                responsaveis,
+                command.Matricula.TurmaId
             ),
             responsaveis,
             new Endereco
