@@ -12,7 +12,13 @@ public class MatriculaConfig : IEntityTypeConfiguration<Matricula>
         builder.HasKey(m => m.Id);
         builder.Property(m => m.Numero)
             .IsRequired();
+
         builder.HasOne(m => m.Aluno);
+
+        builder.HasOne(m => m.Turma)
+            .WithMany()
+            .HasForeignKey(m=>m.TurmaId);
+
         builder.HasMany(m => m.Responsaveis)
             .WithMany(r => r.Matriculas)
             .UsingEntity(j => j.ToTable("MatriculaResponsavel"));

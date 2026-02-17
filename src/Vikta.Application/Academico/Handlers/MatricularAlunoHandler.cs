@@ -38,6 +38,7 @@ public class MatricularAlunoHandler(IMatriculaRepository matriculaRepository) : 
 
         var matricula = new Matricula(
             command.Matricula.Numero,
+            command.Matricula.TurmaId,
             new Aluno
             (
                 command.Matricula.Aluno.Nome,

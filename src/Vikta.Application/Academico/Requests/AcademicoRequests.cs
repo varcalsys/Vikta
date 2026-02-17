@@ -2,6 +2,7 @@
 {
     public record MatricularAlunoRequest(
     int Numero,
+    int TurmaId,
     AlunoRequest Aluno,
     IReadOnlyCollection<ResponsavelRequest> Responsaveis,
     EnderecoRequest Endereco);

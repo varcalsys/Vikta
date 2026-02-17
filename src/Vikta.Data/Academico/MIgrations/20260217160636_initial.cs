@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace Vikta.Data.Academico.Migrations
+namespace Vikta.Data.Academico.MIgrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -105,6 +105,7 @@ namespace Vikta.Data.Academico.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Numero = table.Column<int>(type: "int", nullable: false),
                     AlunoId = table.Column<int>(type: "int", nullable: false),
+                    TurmaId = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     Endereco_Bairro = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Endereco_Complemento = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -119,6 +120,12 @@ namespace Vikta.Data.Academico.Migrations
                         name: "FK_Matricula_Aluno_AlunoId",
                         column: x => x.AlunoId,
                         principalTable: "Aluno",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Matricula_Turma_TurmaId",
+                        column: x => x.TurmaId,
+                        principalTable: "Turma",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -180,6 +187,11 @@ namespace Vikta.Data.Academico.Migrations
                 name: "IX_Matricula_AlunoId",
                 table: "Matricula",
                 column: "AlunoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Matricula_TurmaId",
+                table: "Matricula",
+                column: "TurmaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MatriculaResponsavel_ResponsaveisId",
