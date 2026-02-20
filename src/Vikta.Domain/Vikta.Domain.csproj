@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Academico\Queries\" />
+    <Folder Include="Comunicacao\Commands\" />
+    <Folder Include="Comunicacao\Entities\" />
+    <Folder Include="Comunicacao\Queries\" />
+    <Folder Include="Financeiro\Commands\" />
+    <Folder Include="Financeiro\Entities\" />
+    <Folder Include="Financeiro\Queries\" />
+    <Folder Include="Nutricao\Commands\" />
+    <Folder Include="Nutricao\Entities\" />
+    <Folder Include="Nutricao\Queries\" />
+  </ItemGroup>
+
+</Project>

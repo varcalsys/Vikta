@@ -1,14 +1,14 @@
 <Solution>
-  <Folder Name="/1 - Presentation/">
-    <Project Path="src/Vikta.APi/Vikta.APi.csproj" Id="7afcb614-e319-4b5f-8b32-72e2cea5fdf4" />
+  <Folder Name="/01 - Presentation/">
+    <Project Path="src/Vikta.Api/Vikta.Api.csproj" Id="7ef5e15f-37f4-4e64-8f7d-bbf9d77da54c" />
   </Folder>
-  <Folder Name="/2 - Application/">
-    <Project Path="src/Vikta.Application/Vikta.Application.csproj" Id="18867706-2400-4657-8022-1c5058163462" />
+  <Folder Name="/02 - Applicarion/">
+    <Project Path="src/Vikta.Application/Vikta.Application.csproj" Id="fe01c2a2-5419-4749-b443-fe4bc73594a9" />
   </Folder>
-  <Folder Name="/3 - Domain/">
-    <Project Path="src/Vikta.Dominio/Vikta.Dominio.csproj" Id="f8dfa92d-9c3f-4905-a68b-fc88c4d66bcc" />
+  <Folder Name="/03 - Domain/">
+    <Project Path="src/Vikta.Domain/Vikta.Domain.csproj" Id="0051f197-b20d-4a67-8d55-ca8cb1637fa5" />
   </Folder>
-  <Folder Name="/4 - Infra/">
-    <Project Path="src/Vikta.Data/Vikta.Data.csproj" Id="9ec49960-a988-4ad6-aa25-f5f577fa5d3f" />
+  <Folder Name="/04 - Infra/">
+    <Project Path="src/Vikta.Data/Vikta.Data.csproj" Id="f66f1d09-4dc5-4f3c-b35f-1fbd24262d2c" />
   </Folder>
 </Solution>

@@ -8,7 +8,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Vikta.Data\Vikta.Data.csproj" />
-    <ProjectReference Include="..\Vikta.Dominio\Vikta.Dominio.csproj" />
+    <ProjectReference Include="..\Vikta.Domain\Vikta.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
+    <PackageReference Include="MediatR" Version="13.1.0" />
   </ItemGroup>
 
 </Project>
